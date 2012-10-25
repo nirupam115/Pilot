@@ -1,0 +1,23 @@
+One-time setup
+
+Download and unpack the latest VLFeat binary distribution in a directory of your choice (e.g. ~/src/vlfeat). 
+Let VLFEATROOT denote this directory. VLFeat must be added to MATLAB search path by running the vl_setup command found in the VLFEATROOT/toolbox directory. From MATLAB prompt enter
+
+>> run('VLFEATROOT/toolbox/vl_setup')
+VLFeat 0.9.8 ready.
+
+To check that VLFeat is sucessfully installed, try to run the vl_version command:
+
+>> vl_version verbose
+VLFeat version 0.9.8
+    Static config: X64, little_endian, GNU C 40201 LP64, POSIX_threads, SSE2
+    4 CPU(s): GenuineIntel MMX SSE SSE2 SSE3 SSE41 SSE42
+    SIMD enabled: yes
+
+Permanent setup
+
+To permanently add VLFeat to your MATLAB environment, add this line to your startup.m file:
+
+run('VLFEATROOT/toolbox/vl_setup')
+
+When you restart MATLAB, you should see the VLFeat greeting message
