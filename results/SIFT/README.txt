@@ -1,0 +1,1 @@
+This folder contains results obtained using MSER descriptor on the echocardiogram images
