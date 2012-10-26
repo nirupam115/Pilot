@@ -1,24 +1,13 @@
 close all;
-path_data = '..\..\data\';
+
+path_data = '..\..\processed_dataset\'; % Uncomment to use images in folder: processed_dataset 
+% path_data = '..\..\data\'; % Uncomment to use images in folder: data
+
 path_output = '..\..\results\';
 A = dir([path_data '*.png']);
 for i = 1 : size(A,1)
     sift_us(imread([path_data A(i).name]));
-    saveas(1,[path_output 'SIFT\' A(i).name '_1.jpg']);
-    %saveas(2,[path_output 'SIFT\' A(i).name '_2.jpg']);
+    saveas(1,[path_output 'SIFT on processed\' A(i).name '_1.jpg']);  % Uncomment while using images from folder: processed_dataset
+  %  saveas(1,[path_output 'SIFT\' A(i).name '_1.jpg']); % Uncomment while using images from folder: data
+
 end
-
-
-% %% Matching
-% 
-% Ia = imread('ecg1.png');
-% imshow(Ia) ;
-% Ia = single((Ia)) ;
-% 
-% Ib = imread('ecg2.png');
-% imshow(Ib) ;
-% Ib = single((Ib)) ;
-% 
-% [fa, da] = vl_sift(Ia) ;
-% [fb, db] = vl_sift(Ib) ;
-% [matches, scores] = vl_ubcmatch(da, db) ;
