@@ -1,0 +1,1 @@
+This folder contains results obtained using SIFT descriptor on the processed echocardiogram images
