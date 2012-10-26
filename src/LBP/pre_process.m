@@ -1,5 +1,5 @@
-function P = pre_process(image)
-    P = im2double(imread(image));
+function P = pre_process(I)
+    P = im2double(I);
     P = P./max(P(:));
     P = medfilt2(P);
     for i = 1:5

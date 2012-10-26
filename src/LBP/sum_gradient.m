@@ -2,11 +2,15 @@ clc;
 close all;
 clear;
 
-total = 27;
-B = zeros(total,3);
-for k = 1:total
+path_data = '..\..\processed_dataset\'; % Uncomment to use images in folder: processed_dataset 
+% path_data = '..\..\data\'; % Uncomment to use images in folder: data
+
+path_output = '..\..\results\';
+P = dir([path_data '*.png']);
+
+for k = 1:size(P,1)
    
-    A = pre_process(['heart_', num2str(k) ,'.png']);
+    A = pre_process(imread([path_data P(k).name]));
     filx = [-1 0 1];
     fily = [-1;0;1];
     [m n] = size(A);
